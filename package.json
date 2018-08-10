@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/UniqCoin/BlockchainMiner/issues"
   },
-  "homepage": "https://github.com/UniqCoin/BlockchainMiner#readme"
+  "homepage": "https://github.com/UniqCoin/BlockchainMiner#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "crypto-js": "^3.1.9-1"
+  }
 }
