@@ -14,8 +14,15 @@ const calculateHash = (index, prevHash, timestamp, nonce) => {
     return CryptoJS.SHA256(index + prevHash + timestamp + nonce).toString()
 }
 
-const postBlock = async (blockData) => {
-    return await axios.post('http://stormy-everglades-34766.herokuapp.com/mining/submit-mined-block', blockData)
+const postBlock = (blockData) => {
+    const options = {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      data: JSON.stringify(blockData),
+      url: 'http://stormy-everglades-34766.herokuapp.com/mining/submit-mined-block',
+    }
+
+    return axios(options)
 }
 
 const mineBlock = async () => {
